@@ -1,4 +1,5 @@
-export const helper = {
+/// <reference path="../../index.d.ts" />
+export const helper: Helper = {
     groupBy(list: Array<any>, keyGetter: any) {
         const map: any = {};
         list.forEach((item) => {

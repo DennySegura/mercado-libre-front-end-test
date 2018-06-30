@@ -1,7 +1,8 @@
+/// <reference path="../../index.d.ts"/>
 import { Request, Response, NextFunction } from 'express';
 import { productRoutes } from './product';
 
-const apiRoutes = {
+const apiRoutes: scheme = {
   '/': {
     verb: ['get'],
     handler: (req: Request, res: Response, next: NextFunction) => {
@@ -9,7 +10,7 @@ const apiRoutes = {
     }
   }
 };
-export const routesApi: { [index: string]: any } = {
+export const routesApi: scheme = {
   ...apiRoutes,
   ...productRoutes
 };

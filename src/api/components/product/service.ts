@@ -4,6 +4,7 @@ import { endPoints } from './end-point';
 import { AUTHOR } from '../../../env';
 import Product from './model';
 import { helper as _ } from '../../../core/helpers';
+import { ErrorService } from '../../errors';
 
 export const Service = {
     getItems: async (body: any, headers: any) => {
@@ -47,7 +48,7 @@ export const Service = {
             };
         }
         catch (err) {
-            throw { ...err, node_stack: new Error(err) };
+            throw { ...err, message:err.message, node_stack: new Error(err) };
         }
     }
 };

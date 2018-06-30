@@ -1,3 +1,4 @@
+/// <reference path="../../index.d.ts" />
 import * as express from 'express';
 import * as http from 'http';
 import { RequestHandler } from 'express-serve-static-core';
@@ -7,11 +8,7 @@ import { logger } from './../logger';
 const CONFIG_SERVER = 'server';
 const settings = config.get(CONFIG_SERVER);
 
-interface IDynamicSignature {
-  [key: string]: any;
-}
-
-class ExpressApp implements IDynamicSignature {
+class ExpressApp implements DynamicSignature {
   public middlwre: express.Application;
   constructor() {
     this.middlwre = express();
@@ -24,6 +21,7 @@ export abstract class Architecture {
   public timeout: number;
   constructor() {
     this.middlwre = new ExpressApp().middlwre;
+    this.middlwre.disable('x-powered-by');
     this.timeout = 5000;
   }
   public use(...arg: any[]) {
@@ -114,7 +112,4 @@ export abstract class Architecture {
     httpService.on('error', this.onError.bind(this));
     logger.info(`Listening on ${Architecture.port} in ${(settings as any).env} enviroment`);
   }
-}
-export interface ResponseError extends Error {
-  status?: number;
 }

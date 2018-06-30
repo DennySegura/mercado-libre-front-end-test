@@ -1,4 +1,3 @@
-
 process.env.NODE_CONFIG_DIR = `${__dirname}/env`;
 import * as cors from 'cors';
 import { Architecture } from './core/architecture';
@@ -11,9 +10,8 @@ export class Server extends Architecture {
         this.useMiddlewares(middlewaresServer);
         this.mountRoutes(routesServer);
     }
-    public static bootstrap(): Server {
+    public static bootstrap() {
         return new Server();
     }
 }
-
 Server.bootstrap().startListen();

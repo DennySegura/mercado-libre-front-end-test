@@ -15,7 +15,7 @@ dist/
 .idea/
 
 # Coverage directory
-coverage
+__tests__/__coverage__
 
 # Dependencies
 node_modules/

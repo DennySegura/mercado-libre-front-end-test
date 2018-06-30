@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "lint": "eslint --fix .",
-    "test": "jest",
+    "test": "export NODE_ENV=tests && jest --coverage --config=configs/jest.json",
     "test-watch": "jest --watch",
     "cp-to-dist": "gulp copy-to-dist",
     "mkdir-dist": "rm -rf dist && mkdir dist",

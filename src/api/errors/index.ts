@@ -7,10 +7,10 @@ export class ErrorService {
 	private language: string;
 	private message: string;
 	private node_stack : any;
-
+	
 	constructor(value: any) {
-	    this.message = value.message;
-	    this.isTrustedError = value.isTrustedError || true;
+		this.message = value.message;
+		this.isTrustedError = value.isTrustedError || true;
 		this.status = value.status || 500;
 		this.code = value.code || '0';
 		this.language = value.language || 'ES';

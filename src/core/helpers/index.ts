@@ -16,7 +16,8 @@ export const helper: Helper = {
     objectToArray(obj: any, operator: any) {
         return Object.keys(obj).map(operator);
     },
-    sortAB(a: any, b: any) {
-        return b.value - a.value;
+    sortAB(a: sorteableValue |number, b: sorteableValue |number) {
+      return (typeof b ==='number'? b: b.value)
+       - (typeof a ==='number'? a: a.value);
     }
 };

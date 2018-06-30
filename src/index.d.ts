@@ -12,9 +12,13 @@ declare module "http-status";
 declare module "i18n";
 declare module "winston";
 
+interface sorteableValue {
+  key:string,
+  value:number
+}
 interface scheme {
      [index: string]: any;
- }
+}
 interface IAuthor{
     name: string,
     lastname: string

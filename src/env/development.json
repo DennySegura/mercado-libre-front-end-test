@@ -1,0 +1,8 @@
+{
+	"server": {
+		"env": "development",
+		"port": 7000,
+		"apiBasePath": "https://api.mercadolibre.com",
+		"baseUrl": "/api"
+	}
+}

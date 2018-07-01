@@ -1,0 +1,20 @@
+///* ========================================================================
+//   #application
+//   ======================================================================== */
+
+@import "generic/normalize";
+@import "generic/reset";
+@import "settings/core";
+@import "settings/spacings";
+@import "settings/typography";
+@import "settings/color";
+@import "../../components/product-description/_product_description";
+@import "../../components/breadcrumb/_breadcrumb";
+@import "../../components/button/_button";
+@import "../../components/product-info/_product_info";
+@import "../../components/result-list-item/_result_list_item";
+@import "../../components/search-input/_search_input";
+
+body {
+  font-family: 'Proxima Nova', sans-serif;
+}

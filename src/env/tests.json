@@ -3,6 +3,7 @@
 		"env": "testing",
 		"port": 7001,
 		"apiBasePath": "https://api.mercadolibre.com",
-		"baseUrl": "/api"
+		"baseUrl": "/api",
+		"appName": "[testing] Mercado Libre Front-End Test"
 	}
 }

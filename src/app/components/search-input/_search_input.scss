@@ -1,0 +1,27 @@
+.search__input__container {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  background-color: $turbo;
+}
+
+.search__input__input {
+  padding: 8px 0 8px 8px;
+  border-width: 0;
+  font-size: 18px;
+  flex: 0 0 90%;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.search__input__input:focus {
+  outline: none;
+}
+
+.search__input__button {
+  border-width: 0;
+  background-color: $gallery;
+  outline: none;
+  flex: 0 0 10%;
+  border-radius: 0 4px 4px 0;
+}

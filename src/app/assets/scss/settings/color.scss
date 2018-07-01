@@ -1,0 +1,23 @@
+///* ========================================================================
+//   #settings colors named from http://chir.ag/projects/name-that-color/#FFE600
+//   ======================================================================== */
+$turbo: #ffe600 !default;
+$mine-shaft: #333 !default;
+$dove-gray: #666 !default;
+$dusty-gray: #999 !default;
+$gallery: #eee !default;
+$dodger-blue: #3483fa !default;
+
+.tc-turbo { color: $turbo; }
+.tc-mine-shaft { color: $mine-shaft; }
+.tc-dove-gray { color: $dove-gray; }
+.tc-dusty-gray { color: $dusty-gray; }
+.tc-gallery { color: $gallery; }
+.tc-dodger-blue { color: $dodger-blue; }
+
+.bg-turbo { background-color: $turbo; }
+.bg-mine-shaft { background-color: $mine-shaft; }
+.bg-dove-gray { background-color: $dove-gray; }
+.bg-dusty-gray { background-color: $dusty-gray; }
+.bg-gallery { background-color: $gallery; }
+.bg-dodger-blue { background-color: $dodger-blue; }

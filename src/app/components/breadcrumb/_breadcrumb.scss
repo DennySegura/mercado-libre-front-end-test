@@ -1,0 +1,19 @@
+.breadcrumb--container {
+  list-style: none;
+
+  li {
+    display: inline;
+    color: $dusty-gray;
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  li:last-child {
+    font-weight: bold;
+  }
+
+  li + li::before {
+    padding: 8px;
+    content: ">";
+  }
+}

@@ -1,15 +1,17 @@
 import * as React from 'react';
 import { helper } from '../../helper'
 
-export default ({condition, price, title, sold}: any)=> {
+export default ({condition, price, title, sold_quantity}: any)=> {
   return (
-    <div>
-      <span className={'anotation'}>{`${condition} - ${sold} vendidos`}</span>
-      <h1 className={'headline'}>{title}</h1>
+    <div className={'pt3 column'}>
+      <span className={'anotation mb'}>{`${condition} - ${sold_quantity} vendidos`}</span>
+      <span className={'headline'}>{title}</span>
       <span className={'price--container mv3'}>
         <span className={'price--amount mr'}>{'$'}</span>
         <span className={'price--amount'}>{helper.moneyFormat(price.amount)}</span>
-        {price.decimals>0 && <span className={'price--decimals'}>{price.decimals}</span>}
+        <span className={'price--decimals'}>
+          {price.decimals === 0 ? "00": price.decimals}
+        </span>
       </span>
     </div>
   );

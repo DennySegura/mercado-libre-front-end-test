@@ -5,6 +5,7 @@ import { Service } from './service';
 export const Controller = {
     getItems: async (req: Request, res: Response, next: NextFunction) => {
         try {
+          // console.log(req.headers)
             const result: any = await Service.getItems(req.query, {});
             res.json(result);
         }

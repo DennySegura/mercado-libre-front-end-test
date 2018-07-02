@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-export default () => {
+export default ({ text }:any) => {
   return (
     <button className={'button--container bg-dodger-blue'}>
-      <span className={'subheading'}>{'Comprar'}</span>
+      <span className={'subheading'}>{text}</span>
     </button>
   );
 }

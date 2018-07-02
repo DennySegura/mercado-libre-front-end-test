@@ -1,9 +1,11 @@
 import * as React from 'react';
-
-export default (categories: Array<string>)=> {
+const {Fragment} = React
+export default ({categories}: {categories: string[]})=> {
   return (
-    <ul className={'breadcrumb--container pv'}>
-      {categories.map((item: string)=> <li>{item}</li>)}
-    </ul>
+    <Fragment>
+      <ul className={'breadcrumb--container pv'}>
+        {categories.map((item: string)=> <li>{item}</li>)}
+      </ul>
+    </Fragment>
   );
 }

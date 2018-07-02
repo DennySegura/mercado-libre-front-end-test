@@ -1,35 +1,52 @@
 import * as React from 'react';
-import { helper } from '../../helper'
-const item = {
-  "id": "MLA726036382",
-  "sold_quantity": 500,
-  "title": "Iphone 7 Plus 128gb Nuevos Sellados Promo Oportunidad Libres",
-  "price": {
-    "decimals": 95,
-    "amount": 4000,
-    "currency": "ARS"
-  },
-  "picture": "http://mla-s1-p.mlstatic.com/943893-MLA27200959891_042018-I.jpg",
-  "condition": "new",
-  "free_shipping": true,
-  "location": "Capital Federal"
-};
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import * as queryString from 'query-string';
+import AppBar from '../../components/app-bar';
+import BreadCrumb from '../../components/breadcrumb';
+import AvailabilityItem from '../../components/result-list-item';
+
 export default class SearchBox extends React.Component {
+  state: any;
+  constructor(props:any){
+    super(props);
+    this.typing = this.typing.bind(this);
+    this.search = this.search.bind(this);
+    const params = queryString.parse(props.location.search);
+    this.state = {
+      inputValue: params.search || null,
+      searched: params.search
+    }
+  }
+  typing({ target }:any){
+    this.setState({inputValue: target.value});
+  }
+  search(event:any){
+    event.preventDefault();
+    const { history }:any = this.props;
+    history.push(null, `/items?search=${this.state.inputValue.trim()}`);
+  }
   render() {
+    const { categories=[], availabilities=[] }:any = this.props;
+    const { inputValue, searched } = this.state
     return (
-      <div className={'item__container pv'}>
-        <img src={'http://mla-s2-p.mlstatic.com/967347-MLA25979285510_092017-I.jpg'} className={'item__image mr'}/>
-        <div className={'item__info--container'}>
-          <div className={'item__description--container mt'}>
-            <span className={'item__price--container mb3'}>
-              <span className={'item__price--currency'}>{'$'}</span>
-              <span className={'item__price--amount'}>{helper.moneyFormat(item.price.amount)}</span>
-              {item.price.decimals>0 && <span className={'item__price--decimals'}>{item.price.decimals}</span>}
-              {item.free_shipping && <img className={'item__free_shipping'} src={require('../../assets/img/ic_shipping.png')}/>}
-            </span>
-            <span className={'item__description'}>{item.title}</span>
+      <div>
+        {searched && <Helmet>
+          <meta charSet="utf-8" />
+          <title>{`${searched} en Test Front-End Mercado Libre`}</title>
+          <link rel="canonical" href={`http://localhost:3000/items?search=${searched}`} />
+        </Helmet>}
+        <AppBar value={inputValue} onChange={this.typing} onPress={this.search}/>
+        <div className={'screen__content'}>
+          <BreadCrumb categories={categories}/>
+          <div className={'screen__content--info ph'}>
+            {availabilities.map((item: any)=> {
+              return (
+                <Link to={`/items/${item.id}`} className={'item__link--container'}>
+                <AvailabilityItem {...item}/>
+              </Link>)
+            })}
           </div>
-          <span className={'caption tc-dusty-gray mt3 item__location'}>{item.location}</span>
         </div>
       </div>
     );

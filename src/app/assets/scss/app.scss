@@ -8,6 +8,7 @@
 @import "settings/spacings";
 @import "settings/typography";
 @import "settings/color";
+@import "../../components/app-bar/_app_bar";
 @import "../../components/product-description/_product_description";
 @import "../../components/breadcrumb/_breadcrumb";
 @import "../../components/button/_button";
@@ -17,4 +18,57 @@
 
 body {
   font-family: 'Proxima Nova', sans-serif;
+  background-color: $gallery;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.screen__content {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 100px;
+}
+
+.screen__content--info {
+  background-color: white;
+  min-height: 650px;
+  overflow: scroll;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail__image {
+  max-width: 680;
+  width: 83%;
+}
+
+.flex__item__3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.flex__item__9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+
+.not-found__content {
+  flex: 1;
+  min-height: 500px;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-found__image {
+  height: 200px;
+  width: 300px;
 }

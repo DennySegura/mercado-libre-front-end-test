@@ -9,8 +9,8 @@ import { ErrorService } from '../../errors';
 export const Service = {
     getItems: async (body: any, headers: any) => {
         try {
-            const { query } = body;
-            const url = endPoints['search-box']({ query });
+            const { search } = body;
+            const url = endPoints['search-box']({ query:search });
             const response: AxiosResponse<SearchResult> = (await axios.get(url, { headers }));
             let categories = _.groupBy(response.data.results, (item: any) => item.category_id);
             categories = _.objectToArray(categories, (key: string) => ({ key, value: categories[key].length }));

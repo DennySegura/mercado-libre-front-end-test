@@ -4,13 +4,12 @@ import { endPoints } from './end-point';
 import { AUTHOR } from '../../../env';
 import Product from './model';
 import { helper as _ } from '../../../core/helpers';
-import { ErrorService } from '../../errors';
 
 export const Service = {
     getItems: async (body: any, headers: any) => {
         try {
-            const { search } = body;
-            const url = endPoints['search-box']({ query:search });
+            const { q } = body;
+            const url = endPoints['search-box']({ query:q });
             const response: AxiosResponse<SearchResult> = (await axios.get(url, { headers }));
             let categories = _.groupBy(response.data.results, (item: any) => item.category_id);
             categories = _.objectToArray(categories, (key: string) => ({ key, value: categories[key].length }));
@@ -20,7 +19,7 @@ export const Service = {
             return {
                 author: AUTHOR,
                 categories: category_response.data.path_from_root.map((el: Pathfromroot) => el.name),
-                items: response.data.results.map((el: SearchResultItem) => new Product(el).item)
+                items: response.data.results.slice(0, 5).map((el: SearchResultItem) => new Product(el).item)
             };
         }
         catch (err) {
@@ -44,7 +43,7 @@ export const Service = {
             return {
                 author: AUTHOR,
                 categories: category_response.data.path_from_root.map((el: Pathfromroot) => el.name),
-                items: product.item
+                item: product.item
             };
         }
         catch (err) {

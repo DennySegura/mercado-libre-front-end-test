@@ -19,5 +19,8 @@ export const helper: Helper = {
     sortAB(a: sorteableValue |number, b: sorteableValue |number) {
       return (typeof b ==='number'? b: b.value)
        - (typeof a ==='number'? a: a.value);
+    },
+    headerLanguage(headers: any){
+      return (headers['x-language'] || (headers['accept-language'] as any).split(',')[0]).split('-')[1];
     }
 };

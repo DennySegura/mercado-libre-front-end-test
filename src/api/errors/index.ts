@@ -7,8 +7,9 @@ export class ErrorService {
 	private language: string;
 	private message: string;
 	private node_stack : any;
-	
+
 	constructor(value: any) {
+		console.log(value.language)
 		this.message = value.message;
 		this.isTrustedError = value.isTrustedError || true;
 		this.status = value.status || 500;

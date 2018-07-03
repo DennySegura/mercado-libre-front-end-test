@@ -18,6 +18,9 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loader: 'awesome-typescript-loader',
+        options: {
+          configFileName: 'configs/tsconfig-client.json'
+        }
       },
       {
         test: /\.css$/,

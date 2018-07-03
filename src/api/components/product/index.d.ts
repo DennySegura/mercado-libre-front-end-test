@@ -7,6 +7,7 @@ interface Item {
     free_shipping: boolean,
     sold_quantity?: number,
     description?: string,
+    location?: string
 }
 interface itemPrice {
     currency: string,

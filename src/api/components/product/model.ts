@@ -9,6 +9,7 @@ export default class Product implements Item {
     public free_shipping: boolean;
     public sold_quantity: number;
     public description: string;
+    public location: string;
 
     constructor(item: any) {
         this.item = item;
@@ -38,9 +39,10 @@ export default class Product implements Item {
         this.picture = item.thumbnail;
         this.condition = item.condition;
         this.free_shipping = item.shipping.free_shipping;
+        this.location = item.seller_address.state.name;
     }
     get item(): any {
-        const { id, title, price, picture, condition, free_shipping, sold_quantity, description } = this;
-        return { id, title, price, picture, condition, free_shipping, sold_quantity, description };
+        const { id, title, price, picture, condition, free_shipping, location, sold_quantity, description } = this;
+        return { id, title, price, picture, condition, free_shipping, location, sold_quantity, description };
     }
 }

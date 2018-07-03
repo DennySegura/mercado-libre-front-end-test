@@ -25,7 +25,6 @@ const request = async (url:string, options:any) => {
   }
   return axios({ ...options, url })
   .then((response: any) => {
-    console.log('respuestita',response)
     if (response.status > 200) {
       throw new Error(`Server error: ${response.status} status`);
     }

@@ -1,5 +1,5 @@
 import 'jest';
-import Product from '../src/api/components/product/model.ts';
+import Product from '../src/api/components/product/model';
 
 const bodyItem = {
   "sold_quantity": undefined,

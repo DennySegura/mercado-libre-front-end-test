@@ -26,7 +26,8 @@ interface IAuthor{
 interface Helper {
     groupBy(list: Array<any>, keyGetter: any): any,
     objectToArray(obj: any, operator: any): Array<any>,
-    sortAB(a: any, b: any): number
+    sortAB(a: any, b: any): number,
+    headerLanguage(headers: any): any
 }
 declare class ErrorService {
 	private isTrustedError: boolean;

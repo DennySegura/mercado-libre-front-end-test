@@ -3,7 +3,7 @@ import { helper } from '../../helper'
 
 export default ({condition, price, title, sold_quantity}: any)=> {
   return (
-    <div className={'pt3 column'}>
+    <div className={'column'}>
       <span className={'anotation mb'}>{`${condition} - ${sold_quantity} vendidos`}</span>
       <span className={'headline'}>{title}</span>
       <span className={'price--container mv3'}>

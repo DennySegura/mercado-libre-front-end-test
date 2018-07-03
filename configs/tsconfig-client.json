@@ -11,11 +11,11 @@
             "esnext.asynciterable"
         ],
         "rootDirs": [
-            "./src",
+            "../src",
             "application"
         ],
         "sourceMap": false,
-        "outDir": "./dist",
+        "outDir": "../dist",
         "removeComments": true,
         "strict": true,
         "noImplicitAny": true,
@@ -24,12 +24,11 @@
         "moduleResolution": "node"
     },
     "exclude": [
-        "node_modules/",
-        "**/*.spec.ts",
-        "**/*.test.ts",
-        "./node_modules/**/*.d.ts"
+        "../node_modules/",
+        "../__tests__/*.spec.ts",
+        "../node_modules/**/*.d.ts"
     ],
     "include": [
-        "./src/**/*.ts"
+        "../src/app/**/*.ts"
     ]
 }

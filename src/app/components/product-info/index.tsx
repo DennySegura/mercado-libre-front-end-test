@@ -1,7 +1,8 @@
+/// <reference path="../../index.d.ts"/>
 import * as React from 'react';
-import { helper } from '../../helper'
+import { helper } from '../../helper';
 
-export default ({condition, price, title, sold_quantity}: any)=> {
+export default ({ condition, price, title, sold_quantity }: ProductInfoProps) => {
   return (
     <div className={'column'}>
       <span className={'anotation mb'}>{`${condition} - ${sold_quantity} vendidos`}</span>
@@ -10,9 +11,9 @@ export default ({condition, price, title, sold_quantity}: any)=> {
         <span className={'price--amount mr'}>{'$'}</span>
         <span className={'price--amount'}>{helper.moneyFormat(price.amount)}</span>
         <span className={'price--decimals'}>
-          {price.decimals === 0 ? "00": price.decimals}
+          { price.decimals === 0 ? '00' : price.decimals }
         </span>
       </span>
     </div>
   );
-}
+};

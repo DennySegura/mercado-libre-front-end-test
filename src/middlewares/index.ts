@@ -9,13 +9,13 @@ import * as cors from 'cors';
 import { logger } from './../core/logger';
 import { Api } from './../api';
 import { ErrorService } from './../api/errors';
-import { helper } from '../core/helpers'
+import { helper } from '../core/helpers';
 
 const CONFIG_SERVER = 'server';
 const ConfigServer = config.get(CONFIG_SERVER);
 const baseUrl = `${(ConfigServer as any).baseUrl}`;
 
-export const middlewaresServer: scheme = {
+export const middlewaresServer: Scheme = {
   'health-check': {
     mountPoint: `${baseUrl}/health`,
     handler: expressHealthcheck()
@@ -51,16 +51,16 @@ export const middlewaresServer: scheme = {
     mountPoint: '',
     handler: (error: ErrorRequestHandler, req: Request, res: Response, next: NextFunction) => {
       const language = helper.headerLanguage(req.headers);
-      const err_response:any = new ErrorService({...error, language}).Item
+      const err_response: any = new ErrorService({...error, language}).Item;
       res.status(err_response.status).json({ data: err_response.response });
       logger.error(err_response);
-      if(!err_response.isTrustedError)
-      process.exit(1)
+      if (!err_response.isTrustedError)
+      process.exit(1);
       next();
     }
   }
 };
-export const routesServer: scheme = {
+export const routesServer: Scheme = {
   index: {
     verb: ['get'],
     mountPoint: `${baseUrl}`,

@@ -1,6 +1,7 @@
+/// <reference path="../../index.d.ts"/>
 import * as React from 'react';
 
-export default ({value, change, press}:any)=> {
+export default ({value, change, press}: SearchFilterProps) => {
   return (
     <form onSubmit={press} className={'search__input__container'}>
       <input className={'search__input__input'} type={'text'} placeholder={'Nunca dejes de buscar'}
@@ -10,4 +11,4 @@ export default ({value, change, press}:any)=> {
         </button>
       </form>
     );
-  }
+  };

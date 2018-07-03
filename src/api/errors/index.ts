@@ -6,7 +6,7 @@ export class ErrorService {
 	private code: string;
 	private language: string;
 	private message: string;
-	private node_stack : any;
+	private node_stack: any;
 
 	constructor(value: any) {
 		this.message = value.message;

@@ -10,9 +10,9 @@ export default () => {
   return (
     <Router>
       <Switch>
-        <Route path="/" exact={true} component={SearchBox}/>
-        <Route path="/items" exact={true} sensitive component={Availability}/>
-        <Route path="/items/:id" exact={true} sensitive component={SearchDetail}/>
+        <Route path='/' exact={true} component={SearchBox}/>
+        <Route path='/items' exact={true} sensitive component={Availability}/>
+        <Route path='/items/:id' exact={true} sensitive component={SearchDetail}/>
         <Route path='*' exact={true} component={NotFound} />
       </Switch>
   </Router>);

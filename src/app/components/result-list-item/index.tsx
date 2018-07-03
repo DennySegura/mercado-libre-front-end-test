@@ -1,7 +1,8 @@
+/// <reference path="../../index.d.ts"/>
 import * as React from 'react';
-import { helper } from '../../helper'
+import { helper } from '../../helper';
 
-export default ({price, title, picture, free_shipping, location }:any)=> {
+export default ({ price, title, picture, free_shipping, location }: ProductAvailabilityProps) => {
   return (
     <div className={'item__container pv'}>
       <img src={picture} className={'item__image mr'} alt={'availability_image'}/>
@@ -10,8 +11,8 @@ export default ({price, title, picture, free_shipping, location }:any)=> {
           <span className={'item__price--container mb3'}>
             <span className={'item__price--currency'}>{'$'}</span>
             <span className={'item__price--amount'}>{helper.moneyFormat(price.amount)}</span>
-            {price.decimals>0 && <span className={'item__price--decimals'}>{price.decimals}</span>}
-            {free_shipping && <img className={'item__free_shipping'} src={require('../../assets/img/ic_shipping.png')}/>}
+            { price.decimals > 0 && <span className={'item__price--decimals'}>{price.decimals}</span>}
+            { free_shipping && <img className={'item__free_shipping'} src={require('../../assets/img/ic_shipping.png')}/>}
           </span>
           <span className={'item__description'}>{title}</span>
         </div>

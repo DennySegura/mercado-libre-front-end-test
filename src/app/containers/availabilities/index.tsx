@@ -8,13 +8,13 @@ const stateToProp = ({ api }: any) => {
     data: api.availability.data,
     error: api.availability.error,
     keyword: api.searched
-  }
-}
+  };
+};
 const dispatchToProps = (dispatch: any) => {
   return {
-    searchProducts(value: string) {dispatch(getProducts(value))},
-    clearWindow(value:string ){dispatch(clean(value))},
-    changeInput(value: string) {dispatch(updateInput(value))}
-  }
-}
-export default connect(stateToProp, dispatchToProps)(Layer(Content))
+    searchProducts(value: string) { dispatch(getProducts(value)); }
+    clearWindow(value: string ){ dispatch(clean(value)); },
+    changeInput(value: string) { dispatch(updateInput(value)); }
+  };
+};
+export default connect(stateToProp, dispatchToProps)(Layer(Content));

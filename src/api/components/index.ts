@@ -2,7 +2,7 @@
 import { Request, Response, NextFunction } from 'express';
 import { productRoutes } from './product';
 
-const apiRoutes: scheme = {
+const apiRoutes: Scheme = {
   '/': {
     verb: ['get'],
     handler: (req: Request, res: Response, next: NextFunction) => {
@@ -10,7 +10,7 @@ const apiRoutes: scheme = {
     }
   }
 };
-export const routesApi: scheme = {
+export const routesApi: Scheme = {
   ...apiRoutes,
   ...productRoutes
 };

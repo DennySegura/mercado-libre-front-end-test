@@ -1,33 +1,33 @@
-declare module "*.json" {
+declare module '*.json' {
     const value: any;
     export default value;
 }
-declare module "json!*" {
+declare module 'json!*' {
     const value: any;
     export default value;
 }
-declare module "express-healthcheck";
-declare module "compression";
-declare module "http-status";
-declare module "i18n";
-declare module "winston";
+declare module 'express-healthcheck';
+declare module 'compression';
+declare module 'http-status';
+declare module 'i18n';
+declare module 'winston';
 
-interface sorteableValue {
-  key:string,
-  value:number
+interface SorteableValue {
+  key: string;
+  value: number;
 }
-interface scheme {
+interface Scheme {
      [index: string]: any;
 }
 interface IAuthor{
-    name: string,
-    lastname: string
+    name: string;
+    lastname: string;
 }
 interface Helper {
-    groupBy(list: Array<any>, keyGetter: any): any,
-    objectToArray(obj: any, operator: any): Array<any>,
-    sortAB(a: any, b: any): number,
-    headerLanguage(headers: any): any
+    groupBy(list: any[], keyGetter: any): any;
+    objectToArray(obj: any, operator: any): any[];
+    sortAB(a: any, b: any): number;
+    headerLanguage(headers: any): any;
 }
 declare class ErrorService {
 	private isTrustedError: boolean;
@@ -35,12 +35,12 @@ declare class ErrorService {
 	private code: string;
 	private language: string;
 	private message: string;
-	private node_stack : any;
+	private node_stack: any;
 	constructor(value: any);
-	Item(): any;
+	public Item(): any;
 }
 declare class TranslationsService {
-    public static getTranslationData(locale: string, path: string): any
+    public static getTranslationData(locale: string, path: string): any;
 }
 interface DynamicSignature {
   [key: string]: any;
@@ -65,7 +65,7 @@ declare abstract class Architecture {
     public setStatics(options: any): void;
     public setStatic(middlwrPath: string): void;
     public setViewsEngine(viewEngine: string, dirname: string): void;
-    public setServerTimeOut(time:number): void;
+    public setServerTimeOut(time: number): void;
     public onError(error: NodeJS.ErrnoException): void;
     public startListen(): void;
     public static normalizePort(val: number | string): number | string | boolean;

@@ -1,3 +1,4 @@
+/// <reference path="../../index.d.ts"/>
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import * as queryString from 'query-string';
@@ -7,26 +8,24 @@ import Description from '../../components/product-description';
 import ProductInfo from '../../components/product-info';
 import Button from '../../components/button';
 
-export default class SearchBox extends React.Component <any, any>{
-  state: any;
-  constructor(props:any){
+export default class ItemDetail extends React.Component <ItemDetailProps> {
+  constructor(props: ItemDetailProps){
     super(props);
   }
-  componentDidMount(){
-    const { match, data } = this.props
-    if(data && data.item){
+  public componentDidMount(){
+    const { match, data } = this.props;
+    if (data && data.item) {
       this.props.clearWindow('detail');
     }
     this.props.searchProduct(match.params.id);
   }
-  render() {
-    const { data, onChange, onPress }:any = this.props;
+  public render() {
+    const { data, onChange, onPress } = this.props;
     return (
       <div>
         {data && data.item.title && <Helmet>
-          <meta charSet="utf-8" />
           <title>{data.item.title}</title>
-          <meta name="description" content={data.item.description}/>
+          <meta name='description' content={data.item.description}/>
         </Helmet>}
         <AppBar value={null} onChange={onChange} onPress={onPress}/>
         {data && <div className={'screen__content'}>

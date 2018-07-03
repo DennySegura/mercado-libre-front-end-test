@@ -76,7 +76,7 @@ export abstract class Architecture {
     else if (port >= 0) return port;
     else return false;
   }
-  public setServerTimeOut(time:number){
+  public setServerTimeOut(time: number){
       this.timeout = time;
   }
   public onError(error: NodeJS.ErrnoException): void {

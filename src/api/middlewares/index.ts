@@ -4,12 +4,12 @@ import * as httpStatus from 'http-status-codes';
 import { ErrorService } from '../errors';
 import { helper } from '../../core/helpers';
 
-export const middlewaresApi: scheme = {
+export const middlewaresApi: Scheme = {
   'http-status-not-found': {
     mountPoint: '',
     handler: (error: ErrorRequestHandler, req: Request, res: Response, next: NextFunction) => {
       res.statusCode === httpStatus.NOT_FOUND && res.json({ message: httpStatus.NOT_FOUND });
-      next(error)
+      next(error);
     }
   },
   'http-status-error': {

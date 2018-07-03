@@ -1,17 +1,17 @@
-import * as React from "react";
-import { Provider } from 'react-redux'
-import { store } from './flux'
-import AppRouter from './config/router'
+import * as React from 'react';
+import { Provider } from 'react-redux';
+import { store } from './flux';
+import AppRouter from './config/router';
 
 export default class App extends React.Component {
   constructor(props: any) {
-    super(props)
+    super(props);
   }
-  render() {
+  public render() {
     return (
       <Provider store={store}>
         <AppRouter/>
       </Provider>
-    )
+    );
   }
 }

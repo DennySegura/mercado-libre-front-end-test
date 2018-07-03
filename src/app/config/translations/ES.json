@@ -1,6 +1,7 @@
 {
-  "global":{
+  "translations":{
     "new": "Nuevo",
-    "sold": "Vendidos"
+    "used": "Usado",
+    "sold": "vendidos"
   }
 }

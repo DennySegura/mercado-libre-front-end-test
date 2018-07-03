@@ -23,10 +23,15 @@ export default class ItemDetail extends React.Component <ItemDetailProps> {
     const { data, onChange, onPress } = this.props;
     return (
       <div>
-        {data && data.item.title && <Helmet>
-          <title>{data.item.title}</title>
-          <meta name='description' content={data.item.description}/>
-        </Helmet>}
+        {data && data.item.title && <Helmet
+          title={data.item.title}
+          meta={[
+            {'name': 'description', 'content': data.item.description },
+            {property: 'og:type', content: 'article'},
+            {property: 'og:title', content: data.item.title},
+            {property: 'og:image', content: data.item.picture}
+          ]}
+        />}
         <AppBar value={null} onChange={onChange} onPress={onPress}/>
         {data && <div className={'screen__content'}>
           <BreadCrumb categories={data.categories}/>

@@ -1,12 +1,17 @@
-interface RequestOptions {
-  mode: string;
-  headers: RequestHeaders;
+declare module '*.json' {
+    const value: any;
+    export default value;
 }
 
-interface RequestHeaders {
+interface RequestOptions {
+  mode: string;
+  headers: IRequestHeaders;
+}
+
+interface IRequestHeaders {
   Accept: string;
-  'Content-Type': string;
-  'X-Language': string;
+  ['Content-Type']: string;
+  ['X-Language']?: string;
 }
 
 interface RequestBuilderParameters {
@@ -38,8 +43,8 @@ declare function createReducer(reduxState: any, descriptor: ReducerBuilderDescri
 
 interface SearchFilterProps {
   value: string | null | undefined;
-  onChange: Function;
-  onPress: Function;
+  onChange: Function | undefined;
+  onPress: Function | undefined;
 }
 
 interface BreadCrumbProps {
@@ -59,6 +64,7 @@ interface ProductInfoProps {
   price: ItemPrice;
   title: string;
   sold_quantity: number;
+  t?: any;
 }
 
 interface ProductAvailabilityProps {

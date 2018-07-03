@@ -13,9 +13,13 @@ class Home extends React.Component <SearchBoxContainerProps> {
     const { onChange, onPress } = this.props;
     return (
       <div>
-        <Helmet>
-          <title>{'Test Front-End Mercado Libre'}</title>
-        </Helmet>
+        <Helmet
+          title={'Test Front-End Mercado Libre'}
+          meta={[
+            {property: 'og:type', content: 'article'},
+            {property: 'og:title', content: 'Test Front-End Mercado Libre'}
+          ]}
+        />
         <AppBar value={null} onChange={onChange} onPress={onPress}/>
       </div>
     );

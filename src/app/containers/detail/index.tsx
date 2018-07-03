@@ -15,4 +15,4 @@ const dispatchToProps = (dispatch: any) => {
     clearWindow(value: string) { dispatch(clean(value)); }
   };
 };
-export default connect(stateToProp, dispatchToProps)(Layer(Content));
+export default connect<any, any, {}>(stateToProp, dispatchToProps)(Layer(Content));

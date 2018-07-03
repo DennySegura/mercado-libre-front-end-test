@@ -34,9 +34,11 @@ export default class SearchBox extends React.Component <SearchBoxProps, SearchBo
     const { data, onChange, onPress, inputValue } = this.props;
     return (
       <div>
-        {inputValue && <Helmet>
-          <title>{`${inputValue} en Test Front-End Mercado Libre`}</title>
-        </Helmet>}
+        {inputValue && <Helmet
+          title={`${inputValue} en Test Front-End Mercado Libre`}
+          meta={[ {property: 'og:type', content: 'article'},
+          {property: 'og:title', content: `${inputValue} en Test Front-End Mercado Libre`}]}
+        />}
         <AppBar value={inputValue} onChange={onChange} onPress={onPress}/>
         { data && <div className={'screen__content'}>
           <BreadCrumb categories={data.categories}/>

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test suites for react components It should render <BreadCrumb /> 1`] = `
+<ul
+  className="breadcrumb--container pv"
+>
+  <li>
+    Electrónica, Audio y Video
+  </li>
+  <li>
+    Televisores
+  </li>
+  <li>
+    TV 4K
+  </li>
+  <li>
+    50"
+  </li>
+  <li>
+    Samsung
+  </li>
+</ul>
+`;

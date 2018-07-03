@@ -7,8 +7,7 @@ const defaultOptions: requestOptions = {
   mode: 'cors',
   headers: {
     'Accept': 'application/json',
-    'Content-Type': 'application/json',
-    'X-Language': (navigator as any).language || (navigator as any).userLanguage
+    'Content-Type': 'application/json'
   }
 };
 const request = async (url:string, options:any) => {

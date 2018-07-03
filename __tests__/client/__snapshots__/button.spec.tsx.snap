@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test suites for react components It should render <Button /> 1`] = `
+<button
+  className="button--container bg-dodger-blue"
+>
+  <span
+    className="subheading"
+  >
+    Test
+  </span>
+</button>
+`;

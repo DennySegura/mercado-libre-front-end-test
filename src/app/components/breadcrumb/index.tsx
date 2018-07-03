@@ -4,7 +4,7 @@ export default ({categories}: {categories: string[]})=> {
   return (
     <Fragment>
       <ul className={'breadcrumb--container pv'}>
-        {categories.map((item: string)=> <li>{item}</li>)}
+        {categories.map((item: string)=> <li key={item}>{item}</li>)}
       </ul>
     </Fragment>
   );

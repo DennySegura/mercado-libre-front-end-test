@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test suites for react components It should render <Item /> 1`] = `
+<div
+  className="item__container pv"
+>
+  <img
+    alt="availability_image"
+    className="item__image mr"
+    src="http://mla-s1-p.mlstatic.com/849004-MLA27124959188_042018-I.jpg"
+  />
+  <div
+    className="item__info--container"
+  >
+    <div
+      className="item__description--container mt"
+    >
+      <span
+        className="item__price--container mb3"
+      >
+        <span
+          className="item__price--currency"
+        >
+          $
+        </span>
+        <span
+          className="item__price--amount"
+        >
+          21.999
+        </span>
+      </span>
+      <span
+        className="item__description"
+      >
+        Smart Tv 4k 50  Samsung Un50mu6100
+      </span>
+    </div>
+    <span
+      className="caption tc-dusty-gray mt3 item__location"
+    >
+      Capital Federal
+    </span>
+  </div>
+</div>
+`;

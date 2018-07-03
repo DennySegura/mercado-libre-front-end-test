@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test suites for react components It should render <ProductInfo /> 1`] = `
+<div
+  className="column"
+>
+  <span
+    className="anotation mb"
+  >
+    new - 500 vendidos
+  </span>
+  <span
+    className="headline"
+  >
+    Smart Tv 4k 50  Samsung Un50mu6100
+  </span>
+  <span
+    className="price--container mv3"
+  >
+    <span
+      className="price--amount mr"
+    >
+      $
+    </span>
+    <span
+      className="price--amount"
+    >
+      21.999
+    </span>
+    <span
+      className="price--decimals"
+    >
+      00
+    </span>
+  </span>
+</div>
+`;

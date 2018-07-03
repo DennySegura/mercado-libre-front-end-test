@@ -96,7 +96,7 @@ npm run jest-watch
 
 Endpoint to health check **http://{HOST}/api/health** this return uptime
 
-## Example Components
+## Sample Components
 ### SearchInput
 ![search-input](screenshots/search-input.png)
 ### AppBar

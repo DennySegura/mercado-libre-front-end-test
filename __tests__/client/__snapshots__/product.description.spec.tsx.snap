@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test suites for react components It should render <ProductDescription /> 1`] = `
+<div
+  className="mt column"
+>
+  <span
+    className="description--title mb3"
+  >
+    Descripción del producto
+  </span>
+  <p
+    className="description--text mb3 tc-dusty-gray"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "Test",
+      }
+    }
+  />
+</div>
+`;

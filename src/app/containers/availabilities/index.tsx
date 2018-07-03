@@ -3,7 +3,7 @@ import { getProducts, clean, updateInput } from '../../flux/api/actions';
 import Content from './content';
 import Layer from '../layer';
 
-const stateToProp = ({ api }:any) => {
+const stateToProp = ({ api }: any) => {
   return {
     data: api.availability.data,
     error: api.availability.error,

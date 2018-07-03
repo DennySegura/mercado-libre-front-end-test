@@ -1,14 +1,9 @@
+/// <reference path="../index.d.ts" />
 import axios from 'axios';
 
-const buildURL = (path = '') => {
-  return [
-    'http://localhost:7000',
-    'api',
-    'items',
-    path
-  ].join('/');
-};
-const defaultOptions = {
+const apiHost: string = 'http://localhost:7000';
+const buildURL = (path = '') => [ apiHost, 'api', 'items', path ].join('/');
+const defaultOptions: requestOptions = {
   mode: 'cors',
   headers: {
     'Accept': 'application/json',
@@ -31,17 +26,17 @@ const request = async (url:string, options:any) => {
     return response.data;
   });
 }
-export const helper = {
+export const helper: helper = {
   moneyFormat(value: number){
     const _value = value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&.').split('.');
     _value.pop()
     return _value.join('.');
   }
 };
-export const network =() => {
+export const network = () => {
   return {
     post: (path: string, body = {}) => {
-      return request(buildURL(path), Object.assign(defaultOptions,{method: 'POST',body: JSON.stringify(body)}));
+      return request(buildURL(path), Object.assign(defaultOptions,{ method: 'POST',body: JSON.stringify(body)}));
     },
     get: (path: string) => {
       return request(buildURL(path), Object.assign(defaultOptions,{ method: 'GET' }));

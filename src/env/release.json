@@ -1,7 +1,7 @@
 {
 	"server": {
 		"env": "release",
-		"port": 7002,
+		"port": 7000,
 		"apiBasePath": "https://api.mercadolibre.com",
 		"baseUrl": "/api",
 		"appName": "[release] Mercado Libre Front-End Test"

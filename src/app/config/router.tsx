@@ -6,7 +6,7 @@ import Availability from '../containers/availabilities';
 import SearchDetail from '../containers/detail';
 import NotFound from '../containers/not-found';
 
-const App = () => {
+export default () => {
   return (
     <Router>
       <Switch>
@@ -17,4 +17,3 @@ const App = () => {
       </Switch>
   </Router>);
 };
-export default App;

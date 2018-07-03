@@ -1,5 +1,5 @@
 /// <reference path="../index.d.ts" />
-import { ErrorRequestHandler, Request, Response, NextFunction, Router } from 'express';
+import { ErrorRequestHandler, Request, Response, NextFunction } from 'express';
 import * as bodyParser from 'body-parser';
 import * as expressHealthcheck from 'express-healthcheck';
 import * as config from 'config';

@@ -2,7 +2,6 @@ import 'jest';
 import Product from '../src/api/components/product/model';
 
 const bodyItem = {
-  "sold_quantity": undefined,
   "description": undefined,
   "id": "MLA716454202",
   "site_id": "MLA",

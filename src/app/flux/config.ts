@@ -1,5 +1,6 @@
+/// <reference path="../index.d.ts"/>
 import * as _ from 'lodash'
-export const createReducer = (initialState: any, descriptor: any) => {
+export const createReducer: = (initialState: any, descriptor: reducerBuilderDescriptor) => {
     if (!_.isObject(descriptor) || _.isEmpty(descriptor)) {
         throw new Error('Expected a reducer description as an object.')
     }

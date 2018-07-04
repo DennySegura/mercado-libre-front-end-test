@@ -6,14 +6,14 @@ const defaultState: any = {
   searched: null
 };
 const error_availabilities = (state: any = defaultState, { payload }: any): any => {
-  const { data } = payload.response.data;
-  state.availability.error = data;
+  const { data }: any = (payload.response || {});
+  state.availability.error = data && data.data;
   state.availability.data = undefined;
   return ({ ...state });
 };
 const error_detail = (state: any = defaultState, { payload }: any): any => {
-  const { data } = payload.response.data;
-  state.detail.error = data;
+  const { data }: any = (payload.response || {});
+  state.detail.error = data && data.data;
   state.detail.data = undefined;
   return ({ ...state });
 };

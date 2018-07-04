@@ -4,20 +4,20 @@ import * as en from './EN.json';
 import * as es from './ES.json';
 
 i18n
-.use(LanguageDetector)
-.init({
-  resources: { en, es },
-  fallbackLng: 'en',
-  debug: true,
-  ns: ['translations'],
-  defaultNS: 'translations',
-  keySeparator: false,
-  interpolation: {
-    escapeValue: false,
-    formatSeparator: ','
-  },
-  react: {
-    wait: true
-  }
-});
+  .use(LanguageDetector)
+  .init({
+    resources: { en, es },
+    fallbackLng: 'en',
+    debug: false,
+    ns: ['translations'],
+    defaultNS: 'translations',
+    keySeparator: false,
+    interpolation: {
+      escapeValue: false,
+      formatSeparator: ','
+    },
+    react: {
+      wait: true
+    }
+  });
 export default i18n;

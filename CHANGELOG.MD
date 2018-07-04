@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.0.0:
+## [v1.0.0](https://github.com/DennySegura/mercado-libre-front-end-test/releases/tag/v1.0.0):
 
 #### features:
  - app-bar: add app-bar component

@@ -7,7 +7,7 @@ exports[`Test suites for react components It should render <ProductInfo /> 1`] =
   <span
     className="anotation mb"
   >
-    new - 500 vendidos
+    New - 500 sold
   </span>
   <span
     className="headline"

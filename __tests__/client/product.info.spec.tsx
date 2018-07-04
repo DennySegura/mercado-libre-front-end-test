@@ -1,7 +1,9 @@
 import 'jest';
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
-import ProductInfo from '../../src/app/components/product-info'
+import ProductInfo from '../../src/app/components/product-info';
+import { I18nextProvider } from 'react-i18next';
+import i18n from '../../src/app/config/translations';
 
 describe('Test suites for react components', () => {
   it('It should render <ProductInfo />', () => {
@@ -15,8 +17,11 @@ describe('Test suites for react components', () => {
         currency: 'ARS'
       }
     }
-    const _product_info = renderer.create(<ProductInfo { ...data }/>);
-    let product_info_tree = _product_info.toJSON();
+    const _product_info = renderer.create(
+      <I18nextProvider i18n={i18n}>
+        <ProductInfo {...data} />
+      </I18nextProvider>);
+    const product_info_tree = _product_info.toJSON();
     expect(product_info_tree).toMatchSnapshot();
   });
 });

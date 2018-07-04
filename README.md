@@ -36,7 +36,6 @@ Before you start, take a moment to see how the project structure looks like:
 ```
 
 ## Quick start
-1. Clone the repo and install all dependencies
 
 ````bash
 git clone git@github.com:DennySegura/mercado-libre-front-end-test.git
@@ -44,21 +43,41 @@ cd mercado-libre-front-end-test
 npm install
 ````
 
-3. Run server
+## Deploy
 
-* Production mode
+### Run server
 
-````bash
-npm run build
-npm run start
-````
-
-* Development mode
+#### [Release Mode]
 
 ````bash
-npm run build:watch
-npm run start:watch
+npm run pr # Ejecuta el servidor
+npm run start-pr # Ejecuta el servidor + Front
+npm run apm-pr # Ejecuta aplicación con PM2
 ````
+
+#### [Development Mode]
+
+- Para ejecutar de forma independiente el servidor y la aplicación los siguientes comandos en terminales diferentes.
+
+````bash
+npm run client-dev
+npm run dev
+````
+
+- Para ejecutar de forma agrupada.
+
+````bash
+npm run start-dev
+````
+
+## Front End
+
+### Caja de búsqueda
+http://localhost:7000/
+### Resultado de búsqueda
+http://localhost:7000/items?search=iphone
+### Detalle de resultado
+http://localhost:7000/items/MLA682627325
 
 # API Reference
 
@@ -82,6 +101,12 @@ Parameters can be used to query, filter and control the results returned by the 
 | `q`                          | query parameter                 |
 | `id`                         | relation to filter results by specific id |
 
+## Endpoints
+
+### Lista de productos
+http://localhost:7000/api/items?q=tv
+### Detalle de producto
+http://localhost:7000/api/items/:id
 
 ## Tests
 
@@ -89,8 +114,6 @@ Parameters can be used to query, filter and control the results returned by the 
 npm run jest
 npm run jest-watch
 ````
-
-
 
 ## Heath check
 

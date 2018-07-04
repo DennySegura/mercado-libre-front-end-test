@@ -3,7 +3,7 @@ export default class Product implements Item {
 
     public id: string;
     public title: string;
-    public price: itemPrice;
+    public price: ItemPrice;
     public picture: string;
     public condition: string;
     public free_shipping: boolean;

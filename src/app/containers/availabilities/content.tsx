@@ -6,6 +6,7 @@ import * as queryString from 'query-string';
 import AppBar from '../../components/app-bar';
 import BreadCrumb from '../../components/breadcrumb';
 import AvailabilityItem from '../../components/result-list-item';
+import ErrorState from '../../components/error-response';
 
 export default class SearchBox extends React.Component <SearchBoxProps, SearchBoxState>{
   constructor(props: SearchBoxProps){
@@ -31,7 +32,7 @@ export default class SearchBox extends React.Component <SearchBoxProps, SearchBo
     }
   }
   public render() {
-    const { data, onChange, onPress, inputValue } = this.props;
+    const { data, error, onChange, onPress, inputValue } = this.props;
     return (
       <div>
         {inputValue && <Helmet
@@ -40,6 +41,7 @@ export default class SearchBox extends React.Component <SearchBoxProps, SearchBo
           {property: 'og:title', content: `${inputValue} en Test Front-End Mercado Libre`}]}
         />}
         <AppBar value={inputValue} onChange={onChange} onPress={onPress}/>
+        {error && !data && <ErrorState title={error.title} message={error.message}/>}
         { data && <div className={'screen__content'}>
           <BreadCrumb categories={data.categories}/>
           <div className={'screen__content--info ph'}>

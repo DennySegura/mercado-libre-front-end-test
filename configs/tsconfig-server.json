@@ -2,6 +2,7 @@
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
+        "jsx": "react",
         "lib": [
             "dom",
             "es2015.core",
@@ -24,11 +25,12 @@
     },
     "exclude": [
         "../node_modules/",
-        "../src/app/",
         "../__tests__/",
         "../node_modules/**/*.d.ts"
     ],
     "include": [
-        "../src/**/*.ts"
+        "../src/**/*.ts",
+        "../src/**/*.d.ts",
+        "../src/**/*.tsx"
     ]
 }

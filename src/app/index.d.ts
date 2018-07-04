@@ -3,6 +3,8 @@ declare module '*.json' {
     export default value;
 }
 
+declare module 'react-lottie';
+
 interface RequestOptions {
   mode: string;
   headers: IRequestHeaders;

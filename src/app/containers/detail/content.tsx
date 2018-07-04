@@ -7,6 +7,7 @@ import BreadCrumb from '../../components/breadcrumb';
 import Description from '../../components/product-description';
 import ProductInfo from '../../components/product-info';
 import Button from '../../components/button';
+import ErrorState from '../../components/error-response';
 
 export default class ItemDetail extends React.Component <ItemDetailProps> {
   constructor(props: ItemDetailProps){
@@ -20,19 +21,20 @@ export default class ItemDetail extends React.Component <ItemDetailProps> {
     this.props.searchProduct(match.params.id);
   }
   public render() {
-    const { data, onChange, onPress } = this.props;
+    const { data, error, onChange, onPress } = this.props;
     return (
       <div>
         {data && data.item.title && <Helmet
           title={data.item.title}
           meta={[
-            {'name': 'description', 'content': data.item.description },
+            {name: 'description', content: data.item.description },
             {property: 'og:type', content: 'article'},
             {property: 'og:title', content: data.item.title},
             {property: 'og:image', content: data.item.picture}
           ]}
         />}
         <AppBar value={null} onChange={onChange} onPress={onPress}/>
+        {error && !data && <ErrorState title={error.title} message={error.message}/>}
         {data && <div className={'screen__content'}>
           <BreadCrumb categories={data.categories}/>
           <div className={'screen__content--info ph3 pt3 row'}>

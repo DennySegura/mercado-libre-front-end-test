@@ -1,13 +1,13 @@
 /// <reference path="../../index.d.ts"/>
 import * as React from 'react';
-import { withRouter } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import AppBar from '../../components/app-bar';
 import Layer from '../layer';
 
-class Home extends React.Component <SearchBoxContainerProps> {
-  constructor(props: SearchBoxContainerProps){
+class Home extends React.Component<SearchBoxContainerProps, any> {
+  constructor(props: SearchBoxContainerProps) {
     super(props);
+    this.state = { isStopped: false, isPaused: false };
   }
   public render() {
     const { onChange, onPress } = this.props;
@@ -16,11 +16,11 @@ class Home extends React.Component <SearchBoxContainerProps> {
         <Helmet
           title={'Test Front-End Mercado Libre'}
           meta={[
-            {property: 'og:type', content: 'article'},
-            {property: 'og:title', content: 'Test Front-End Mercado Libre'}
+            { property: 'og:type', content: 'article' },
+            { property: 'og:title', content: 'Test Front-End Mercado Libre' }
           ]}
         />
-        <AppBar value={null} onChange={onChange} onPress={onPress}/>
+        <AppBar value={null} onChange={onChange} onPress={onPress} />
       </div>
     );
   }

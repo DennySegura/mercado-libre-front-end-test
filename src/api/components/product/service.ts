@@ -19,7 +19,7 @@ export const Service = {
       return {
         author: AUTHOR,
         categories: category_response.data.path_from_root.map((el: Pathfromroot) => el.name),
-        items: response.data.results.slice(0, 5).map((el: SearchResultItem) => new Product(el).item)
+        items: response.data.results.slice(0, 4).map((el: SearchResultItem) => new Product(el).item)
       };
     }
     catch (err) {

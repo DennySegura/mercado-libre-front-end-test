@@ -69,3 +69,13 @@ export const routesServer: Scheme = {
     }
   }
 };
+export const staticFiles: Scheme = {
+	items: {
+		realPath: 'dist/app',
+		virtualPath: `/items`
+  },
+  home: {
+		realPath: 'dist/app',
+		virtualPath: `/`
+	}
+};
